@@ -2,6 +2,8 @@
 
 This vim plugin provides for the exchange of two selected regions.
 
+![](https://raw.githubusercontent.com/wiki/SausageCats/vim-operator-swap/demo.gif)
+
 ## Usage
 
 **Settings**
