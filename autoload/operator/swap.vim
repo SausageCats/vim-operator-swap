@@ -390,6 +390,7 @@ function! s:swap(wise) abort "  {{{
   let is_successful = v:false
   let should_highlight_area = areanr <= 1 ? v:true : v:false
   let saved_selection = &selection | let &selection = 'inclusive'
+  let saved_virtualedit = &virtualedit | let &virtualedit = 'block'
   let register = 'a' | let [saved_reg, saved_regtype] = [getreg(register, 1, 1), getregtype(register)]
 
   try
@@ -442,8 +443,9 @@ function! s:swap(wise) abort "  {{{
 
   endtry
 
-  call setreg(register, saved_reg, saved_regtype)
   let &selection = saved_selection
+  let &virtualedit = saved_virtualedit
+  call setreg(register, saved_reg, saved_regtype)
 
 endfunction "  }}}
 
