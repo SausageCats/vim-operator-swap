@@ -36,7 +36,7 @@ let s:area1            = {}      " v:t_dict
 let s:area2            = {}      " v:t_dict
 let s:jointext_mode    = v:false " b:t_bool
 function! s:SID() abort "  {{{
-  let sidnr = matchstr(expand('<sfile>'), '^function <SNR>\zs\d\+\ze_')
+  let sidnr = matchstr(expand('<sfile>'), '<SNR>\zs\d\+\ze_SID$')
   return printf("\<SNR>%s_", sidnr)
 endfunction
 let s:SID = s:SID() "  }}}
